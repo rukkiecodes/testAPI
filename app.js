@@ -36,6 +36,30 @@ if (process.env.NODE_ENV === "development") app.use(morgan("dev"))
 
 app.use('/auth', [
   require('./routes/auth/signup'),
+  require('./routes/auth/verifyOTP'),
+  require('./routes/auth/resendVerification'),
+  require('./routes/auth/signin'),
+  require('./routes/auth/getProfile'),
+  require('./routes/auth/updateProfile'),
+  require('./routes/auth/updateAvatar')
+])
+
+app.use('/artizan', [
+  require('./routes/artizan/findArtizan'),
+  require('./routes/artizan/booking'),
+  require('./routes/artizan/getBookings'),
+  require('./routes/artizan/getSingleBooking'),
+  require('./routes/artizan/done'),
+  require('./routes/artizan/rateArtizan')
+])
+
+app.use('/waitlist', [
+  require('./routes/waitlist/waitlist'),
+  require('./routes/waitlist/getList')
+])
+
+app.use('/mail', [
+  require('./routes/mail/acceptJob')
 ])
 
 // Error handling

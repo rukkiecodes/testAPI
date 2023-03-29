@@ -1,10 +1,8 @@
 const router = require("express").Router()
 const bcrypt = require("bcrypt")
-const jwt = require("jsonwebtoken")
 const mongoose = require("mongoose")
 
 const User = require("../../models/user")
-
 
 router.post("/signup", async (req, res) => {
   const { name, email, password } = req.body
